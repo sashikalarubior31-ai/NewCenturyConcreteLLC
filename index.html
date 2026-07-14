@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Century Concrete LLC | Concrete Contractor — Denver Metro</title>
+<meta name="description" content="Family-owned concrete contractor serving the Denver metro area for 20+ years. Free on-site estimates on driveways, patios, walkways, and foundations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --charcoal:#232320;
+    --charcoal-2:#2c2c28;
+    --concrete:#9c9691;
+    --concrete-pale:#e4e0d6;
+    --chalk:#f7f5f0;
+    --orange:#e8590c;
+    --orange-dark:#c14a09;
+    --rust:#8b4a2e;
+    --line:rgba(247,245,240,0.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Work Sans',sans-serif;
+    background:var(--chalk);
+    color:var(--charcoal);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.stencil{
+    font-family:'Oswald',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.02em;
+  }
+  .mono{font-family:'JetBrains Mono',monospace;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+  section{padding:88px 0;}
+  :focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
+
+  /* NAV */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(35,35,32,0.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{
+    display:flex;align-items:center;justify-content:space-between;
+    max-width:1180px;margin:0 auto;padding:16px 24px;
+    color:var(--chalk);
+  }
+  .logo{
+    font-family:'Oswald',sans-serif;
+    font-weight:700;font-size:1.15rem;letter-spacing:0.03em;
+    color:var(--chalk);
+    display:flex;align-items:center;gap:10px;
+  }
+  .logo span{color:var(--orange);}
+  .nav-links{display:flex;gap:28px;align-items:center;font-size:0.92rem;letter-spacing:0.02em;}
+  .nav-links a{opacity:0.85;transition:opacity .2s;}
+  .nav-links a:hover{opacity:1;color:var(--orange);}
+  .call-btn{
+    background:var(--orange);color:var(--chalk);
+    padding:10px 18px;border-radius:3px;font-weight:600;
+    font-size:0.9rem;letter-spacing:0.02em;
+    white-space:nowrap;
+  }
+  .call-btn:hover{background:var(--orange-dark);}
+  .menu-toggle{display:none;background:none;border:none;color:var(--chalk);font-size:1.6rem;cursor:pointer;}
+
+  /* HERO */
+  .hero{
+    background:linear-gradient(160deg,var(--charcoal) 0%,var(--charcoal-2) 100%);
+    color:var(--chalk);
+    padding:100px 0 70px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background-image:radial-gradient(circle at 1px 1px, rgba(247,245,240,0.05) 1px, transparent 0);
+    background-size:22px 22px;
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.15fr 0.85fr;gap:56px;align-items:center;
+    position:relative;z-index:1;
+  }
+  .eyebrow{
+    color:var(--orange);font-family:'JetBrains Mono',monospace;
+    font-size:0.82rem;letter-spacing:0.12em;margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:3.1rem;line-height:1.06;font-weight:700;
+    margin-bottom:22px;
+  }
+  .hero h1 em{font-style:normal;color:var(--orange);}
+  .hero p{
+    font-size:1.08rem;color:var(--concrete-pale);max-width:480px;margin-bottom:32px;
+  }
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:14px 26px;border-radius:3px;font-weight:600;
+    font-size:0.95rem;letter-spacing:0.02em;cursor:pointer;border:none;
+    transition:transform .15s, background .15s;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--orange);color:var(--chalk);}
+  .btn-primary:hover{background:var(--orange-dark);}
+  .btn-outline{background:transparent;color:var(--chalk);border:1.5px solid var(--line);}
+  .btn-outline:hover{border-color:var(--orange);color:var(--orange);}
+
+  /* TICKET (signature element) */
+  .ticket{
+    background:var(--chalk);color:var(--charcoal);
+    border-radius:2px;padding:26px 24px;
+    position:relative;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.5);
+    transform:rotate(1.2deg);
+  }
+  .ticket::before{
+    content:"";position:absolute;left:0;right:0;top:-1px;height:8px;
+    background:repeating-linear-gradient(90deg,transparent,transparent 8px,var(--charcoal-2) 8px,var(--charcoal-2) 9px);
+    opacity:0.15;
+  }
+  .ticket-head{
+    display:flex;justify-content:space-between;align-items:baseline;
+    border-bottom:2px dashed var(--concrete);padding-bottom:14px;margin-bottom:14px;
+  }
+  .ticket-head .stencil{font-size:1rem;font-weight:700;}
+  .ticket-head .mono{font-size:0.72rem;color:var(--rust);}
+  .ticket-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid rgba(35,35,32,0.08);font-size:0.88rem;}
+  .ticket-row:last-of-type{border-bottom:none;}
+  .ticket-row .label{color:var(--concrete);font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.04em;text-transform:uppercase;}
+  .ticket-row .val{font-weight:600;}
+  .ticket-foot{
+    margin-top:16px;padding-top:14px;border-top:2px dashed var(--concrete);
+    display:flex;justify-content:space-between;align-items:center;
+  }
+  .ticket-foot .mono{font-size:0.72rem;color:var(--concrete);}
+  .stamp{
+    font-family:'Oswald',sans-serif;font-weight:700;font-size:0.72rem;
+    color:var(--orange);border:2px solid var(--orange);
+    padding:4px 10px;border-radius:3px;letter-spacing:0.05em;
+    transform:rotate(-4deg);
+  }
+
+  /* TRUST STRIP */
+  .trust{
+    background:var(--concrete-pale);
+    border-top:1px solid rgba(35,35,32,0.08);
+    border-bottom:1px solid rgba(35,35,32,0.08);
+  }
+  .trust .wrap{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:24px;
+    padding:34px 24px;text-align:center;
+  }
+  .trust-item .num{font-family:'Oswald',sans-serif;font-weight:700;font-size:1.5rem;color:var(--rust);}
+  .trust-item .lbl{font-size:0.8rem;color:var(--charcoal);opacity:0.75;letter-spacing:0.02em;margin-top:2px;}
+
+  /* SECTION HEADERS */
+  .section-head{max-width:640px;margin-bottom:48px;}
+  .section-head .eyebrow{color:var(--rust);}
+  .section-head h2{font-size:2.1rem;color:var(--charcoal);margin-bottom:12px;}
+  .section-head p{color:#5b5852;font-size:1rem;}
+
+  /* SERVICES */
+  .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line);border:1px solid rgba(35,35,32,0.1);}
+  .service-card{
+    background:var(--chalk);padding:32px 22px;
+    display:flex;flex-direction:column;gap:14px;
+    transition:background .2s;
+  }
+  .service-card:hover{background:var(--concrete-pale);}
+  .service-card svg{width:34px;height:34px;stroke:var(--rust);}
+  .service-card h3{font-size:1rem;color:var(--charcoal);}
+  .service-card p{font-size:0.86rem;color:#6b675f;}
+
+  /* GALLERY */
+  .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .gallery-tile{
+    aspect-ratio:4/3;border:2px dashed var(--concrete);border-radius:4px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+    color:var(--concrete);background:var(--concrete-pale);
+    font-size:0.8rem;text-align:center;padding:12px;
+  }
+  .gallery-tile svg{width:28px;height:28px;stroke:var(--concrete);}
+  .gallery-note{margin-top:18px;font-size:0.86rem;color:#6b675f;}
+  .gallery-note code{background:var(--concrete-pale);padding:2px 6px;border-radius:3px;font-family:'JetBrains Mono',monospace;font-size:0.8rem;}
+
+  /* WHY US */
+  .why{background:var(--charcoal);color:var(--chalk);}
+  .why .section-head h2, .why .section-head p{color:var(--chalk);}
+  .why .section-head p{color:var(--concrete-pale);}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+  .why-item{border-left:3px solid var(--orange);padding-left:18px;}
+  .why-item h3{font-size:1.05rem;margin-bottom:8px;color:var(--chalk);}
+  .why-item p{font-size:0.9rem;color:var(--concrete-pale);}
+
+  /* QUOTE FORM (work order card) */
+  .quote-section{background:var(--concrete-pale);}
+  .quote-card{
+    background:var(--chalk);border-radius:4px;overflow:hidden;
+    box-shadow:0 20px 50px -25px rgba(35,35,32,0.4);
+    display:grid;grid-template-columns:1fr;
+  }
+  .quote-header{
+    background:var(--charcoal);color:var(--chalk);padding:28px 34px;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
+  }
+  .quote-header h3{font-size:1.3rem;}
+  .quote-header .mono{font-size:0.78rem;color:var(--orange);}
+  form{padding:32px 34px 34px;}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .field{margin-bottom:18px;}
+  .field.full{grid-column:1/-1;}
+  label{
+    display:block;font-family:'JetBrains Mono',monospace;
+    font-size:0.72rem;letter-spacing:0.05em;text-transform:uppercase;
+    color:var(--rust);margin-bottom:6px;
+  }
+  input,select,textarea{
+    width:100%;padding:12px 14px;border:1.5px solid rgba(35,35,32,0.18);
+    border-radius:3px;font-family:'Work Sans',sans-serif;font-size:0.95rem;
+    background:var(--chalk);color:var(--charcoal);
+  }
+  input:focus,select:focus,textarea:focus{border-color:var(--orange);outline:none;}
+  textarea{resize:vertical;min-height:100px;}
+  .file-field{
+    border:1.5px dashed var(--concrete);border-radius:4px;padding:18px;
+    text-align:center;background:var(--concrete-pale);
+  }
+  .file-field input{border:none;background:none;padding:6px 0;}
+  .file-hint{font-size:0.78rem;color:#6b675f;margin-top:6px;}
+  .honeypot{position:absolute;left:-9999px;opacity:0;height:0;}
+  .submit-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:6px;}
+  .form-note{font-size:0.82rem;color:#6b675f;}
+  .form-status{margin-top:14px;font-size:0.9rem;font-weight:600;display:none;}
+  .form-status.show{display:block;}
+  .form-status.ok{color:#3c7a3c;}
+  .form-status.err{color:var(--orange-dark);}
+
+  /* REVIEWS CTA */
+  .reviews-cta{
+    background:var(--rust);color:var(--chalk);text-align:center;
+    border-radius:4px;padding:44px 32px;
+  }
+  .reviews-cta h2{font-size:1.7rem;margin-bottom:10px;}
+  .reviews-cta p{color:var(--concrete-pale);margin-bottom:24px;max-width:460px;margin-left:auto;margin-right:auto;}
+  .reviews-cta .btn-primary{background:var(--chalk);color:var(--charcoal);}
+  .reviews-cta .btn-primary:hover{background:var(--concrete-pale);}
+
+  /* FOOTER */
+  footer{background:var(--charcoal);color:var(--concrete-pale);padding:52px 0 28px;}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;margin-bottom:36px;}
+  footer h4{font-family:'Oswald',sans-serif;color:var(--chalk);font-size:0.9rem;letter-spacing:0.05em;margin-bottom:14px;text-transform:uppercase;}
+  footer p, footer li{font-size:0.88rem;color:var(--concrete);margin-bottom:8px;}
+  footer ul{list-style:none;}
+  .footer-bottom{border-top:1px solid var(--line);padding-top:20px;font-size:0.78rem;color:var(--concrete);text-align:center;}
+
+  @media (max-width:860px){
+    .nav-links{position:fixed;top:64px;left:0;right:0;background:var(--charcoal);
+      flex-direction:column;padding:20px 24px;display:none;border-bottom:1px solid var(--line);}
+    .nav-links.open{display:flex;}
+    .menu-toggle{display:block;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:2.2rem;}
+    .trust .wrap{grid-template-columns:repeat(2,1fr);}
+    .services-grid{grid-template-columns:repeat(2,1fr);}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);}
+    .why-grid{grid-template-columns:1fr;}
+    .form-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">NEW CENTURY <span>CONCRETE</span></div>
+    <div class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#why">Why Us</a>
+      <a href="#quote">Get a Quote</a>
+      <a href="#reviews">Reviews</a>
+      <a class="call-btn" href="tel:7203385255">Call (720) 338-5255</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">DENVER METRO · FAMILY-OWNED · SINCE THE EARLY 2000s</div>
+      <h1>Concrete work that's still standing <em>20 years later.</em></h1>
+      <p>Driveways, patios, walkways, and foundations poured right the first time. No subcontractors, no sales pitch — just the same hands that have been doing this work for two decades.</p>
+      <div class="hero-ctas">
+        <a href="#quote" class="btn btn-primary">Get a Free Estimate</a>
+        <a href="tel:7203385255" class="btn btn-outline">Call (720) 338-5255</a>
+      </div>
+    </div>
+    <div class="ticket">
+      <div class="ticket-head">
+        <span class="stencil">ESTIMATE TICKET</span>
+        <span class="mono">NO. FREE-001</span>
+      </div>
+      <div class="ticket-row"><span class="label">Service</span><span class="val">On-Site Estimate</span></div>
+      <div class="ticket-row"><span class="label">Cost</span><span class="val">$0.00 — Free</span></div>
+      <div class="ticket-row"><span class="label">Area</span><span class="val">Denver Metro</span></div>
+      <div class="ticket-row"><span class="label">Experience</span><span class="val">20+ Years</span></div>
+      <div class="ticket-foot">
+        <span class="mono">TERMS: No Obligation</span>
+        <span class="stamp">APPROVED</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <div class="trust-item"><div class="num">20+</div><div class="lbl">Years in Business</div></div>
+    <div class="trust-item"><div class="num">A+</div><div class="lbl">BBB Rating</div></div>
+    <div class="trust-item"><div class="num">$0</div><div class="lbl">On-Site Estimates</div></div>
+    <div class="trust-item"><div class="num">100%</div><div class="lbl">Family-Run</div></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow mono">WHAT WE POUR</div>
+      <h2>Services</h2>
+      <p>Edit this list with your dad to match exactly what he offers — this is a solid starting point for a residential concrete contractor.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 20h16M6 20V6h12v14" stroke-linecap="round"/></svg>
+        <h3>Driveways</h3>
+        <p>New pours and replacements, standard or decorative finish.</p>
+      </div>
+      <div class="service-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 9h18M3 15h18M9 3v18M15 3v18" stroke-linecap="round"/></svg>
+        <h3>Patios</h3>
+        <p>Outdoor living spaces built to handle Colorado freeze-thaw cycles.</p>
+      </div>
+      <div class="service-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 20h16M4 20l4-14h8l4 14" stroke-linecap="round"/></svg>
+        <h3>Foundations</h3>
+        <p>Slab and footing work for additions, sheds, and new structures.</p>
+      </div>
+      <div class="service-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 4h6v16H4zM14 4h6v16h-6z" stroke-linecap="round"/></svg>
+        <h3>Retaining Walls</h3>
+        <p>Grade correction and erosion control that holds up long-term.</p>
+      </div>
+      <div class="service-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 20V4h16M4 20h16M4 12h16" stroke-linecap="round"/></svg>
+        <h3>Walkways &amp; Sidewalks</h3>
+        <p>Clean, level paths from the curb to the front door.</p>
+      </div>
+      <div class="service-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 20h4v-4h4v-4h4v-4h4" stroke-linecap="round"/></svg>
+        <h3>Steps &amp; Porches</h3>
+        <p>Entryways poured to code and finished to match your home.</p>
+      </div>
+      <div class="service-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 4l16 16M20 4L4 20" stroke-linecap="round"/></svg>
+        <h3>Stamped &amp; Decorative</h3>
+        <p>Colored and textured finishes for a custom look.</p>
+      </div>
+      <div class="service-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 3l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" stroke-linecap="round"/></svg>
+        <h3>Concrete Repair</h3>
+        <p>Cracks, settling, and spalling fixed before they get worse.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" style="background:var(--concrete-pale);">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow mono">RECENT WORK</div>
+      <h2>Gallery</h2>
+      <p>These tiles are placeholders — swap in real job-site photos and this section sells the work on its own.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-tile">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3"/></svg>
+        Add a driveway photo
+      </div>
+      <div class="gallery-tile">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3"/></svg>
+        Add a patio photo
+      </div>
+      <div class="gallery-tile">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3"/></svg>
+        Add a before/after photo
+      </div>
+      <div class="gallery-tile">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3"/></svg>
+        Add a walkway photo
+      </div>
+      <div class="gallery-tile">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3"/></svg>
+        Add a foundation photo
+      </div>
+      <div class="gallery-tile">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3"/></svg>
+        Add a finished-job photo
+      </div>
+    </div>
+    <p class="gallery-note">To swap a tile for a real photo: replace the <code>&lt;div class="gallery-tile"&gt;...&lt;/div&gt;</code> block with <code>&lt;img src="photos/driveway1.jpg" alt="New driveway in Lakewood"&gt;</code>. Same photos you'd use on Google Business Profile work great here too.</p>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow mono">WHY HOMEOWNERS CALL US BACK</div>
+      <h2>Why us</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <h3>Two Decades, One Crew</h3>
+        <p>Over 20 years pouring concrete in the Denver metro — most of the work still comes from word of mouth, because the work speaks for itself.</p>
+      </div>
+      <div class="why-item">
+        <h3>Free, No-Pressure Estimates</h3>
+        <p>We'll come look at the job and give you a real number — no obligation, no upsell.</p>
+      </div>
+      <div class="why-item">
+        <h3>You Talk to the Person Doing the Work</h3>
+        <p>No call center, no middleman. The person who gives the estimate is the person who pours the concrete.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quote-section" id="quote">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow mono">START HERE</div>
+      <h2>Request a free estimate</h2>
+      <p>Tell us about the job and send a photo of the space if you can — the more we know before we show up, the more accurate the estimate.</p>
+    </div>
+    <div class="quote-card">
+      <div class="quote-header">
+        <h3>Work Order Request</h3>
+        <span class="mono">EST. TURNAROUND: 1–2 BUSINESS DAYS</span>
+      </div>
+      <!--
+        SETUP REQUIRED: this form needs a free form-backend endpoint to actually deliver
+        submissions to an inbox, since this is a static HTML page with no server.
+
+        1. Sign up for a free account at a form-backend service that supports file
+           uploads on its free tier (compare current free-tier limits before choosing —
+           these change over time):
+             - un-static.com  (plain HTML POST, no JS required, file uploads included)
+             - staticforms.dev
+             - formbackend.com
+        2. Register a form / get your endpoint URL (looks like
+           "https://forms.un-static.com/forms/YOUR_REFERENCE").
+        3. Replace YOUR_FORM_ENDPOINT_HERE below with that URL.
+        4. In that service's dashboard, set the notification email to wherever you want
+           quote requests delivered, and (optionally) a "thank you" redirect page.
+
+        Until step 3 is done, this form will show a friendly error instead of failing silently.
+      -->
+      <form id="quoteForm" action="YOUR_FORM_ENDPOINT_HERE" method="POST" enctype="multipart/form-data">
+        <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off">
+        <div class="form-grid">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="field">
+            <label for="service">Job Type</label>
+            <select id="service" name="service">
+              <option>Driveway</option>
+              <option>Patio</option>
+              <option>Foundation</option>
+              <option>Retaining Wall</option>
+              <option>Walkway / Sidewalk</option>
+              <option>Steps / Porch</option>
+              <option>Stamped / Decorative</option>
+              <option>Repair</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="address">Job Site Address</label>
+            <input type="text" id="address" name="address" placeholder="Street, City" required>
+          </div>
+          <div class="field full">
+            <label for="details">Tell us about the project</label>
+            <textarea id="details" name="details" placeholder="Rough size of the area, what's there now, timeline, anything you'd want us to know before we come look." required></textarea>
+          </div>
+          <div class="field full">
+            <label for="photo">Photo of the Job Site (optional but helpful)</label>
+            <div class="file-field">
+              <input type="file" id="photo" name="photo" accept="image/*" multiple>
+              <div class="file-hint">JPG or PNG, up to 10MB each. You can also just text photos to (720) 338-5255.</div>
+            </div>
+          </div>
+        </div>
+        <div class="submit-row">
+          <button type="submit" class="btn btn-primary">Request Free Estimate</button>
+          <span class="form-note">We'll call or text you back within 1–2 business days.</span>
+        </div>
+        <div class="form-status" id="formStatus"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="reviews-cta">
+      <h2>Happy with the work?</h2>
+      <p>A quick Google review helps more than almost anything else — it's how the next homeowner finds us.</p>
+      <!-- Replace # with your Google review link: Google Business Profile → Share → "Ask for reviews" gives you a direct link -->
+      <a href="#" class="btn btn-primary" target="_blank" rel="noopener">Leave a Google Review</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>New Century Concrete LLC</h4>
+        <p>Family-owned concrete contractor serving the Denver metro area for over 20 years. Free on-site estimates, no obligation.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:7203385255">(720) 338-5255</a></li>
+          <li>Denver Metro Area</li>
+          <li>Lakewood, Denver, Aurora, Broomfield, Thornton &amp; nearby</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#quote">Get a Free Estimate</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; <span id="year"></span> New Century Concrete LLC. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  const form = document.getElementById('quoteForm');
+  const status = document.getElementById('formStatus');
+
+  form.addEventListener('submit', (e) => {
+    if (form.getAttribute('action') === 'YOUR_FORM_ENDPOINT_HERE' || !form.getAttribute('action')) {
+      e.preventDefault();
+      status.textContent = "This form isn't connected yet — see the setup note in the page code (or ask Claude) to wire it up to a free form service, then it'll send real submissions.";
+      status.className = 'form-status show err';
+    }
+    // If the endpoint IS configured, this lets the form submit normally (plain POST,
+    // no JS needed) so file uploads work reliably across browsers.
+  });
+</script>
+
+</body>
+</html>
